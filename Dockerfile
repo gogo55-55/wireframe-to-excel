@@ -1,13 +1,20 @@
 FROM python:3.11-slim
 
-# 基本ツールとChromiumのインストール
+# 基本ツールとChromium、日本語フォントのインストール
 RUN apt-get update && apt-get install -y \
     wget \
     gnupg \
     unzip \
     chromium \
     chromium-driver \
+    fonts-noto-cjk \
+    locales \
     && rm -rf /var/lib/apt/lists/*
+
+# 日本語ロケールの設定
+RUN localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LC_ALL ja_JP.UTF-8
 
 # 作業ディレクトリ設定
 WORKDIR /app

@@ -46,9 +46,10 @@ def get_japanese_font_path():
                 return font_path
     else:  # Linux
         linux_fonts = [
+            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/opentype/noto/NotoSansCJK.ttc",
             "/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf",
             "/usr/share/fonts/truetype/takao-gothic/TakaoGothic.ttf",
-            "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
         ]
         for font_path in linux_fonts:
             if os.path.exists(font_path):
