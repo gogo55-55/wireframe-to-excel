@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: wireframe-to-excel
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8501
